@@ -118,6 +118,11 @@
             return Boolean(widget && (widget.children.length || widget.textContent.trim()));
           }
 
+          function reloadCalendarPage() {
+            history.replaceState(null, "", `${location.pathname}${location.search}#dates`);
+            location.reload();
+          }
+
           async function startCalendar(clearFirst = false) {
             fallback.hidden = true;
             if (clearFirst) widget.replaceChildren();
@@ -144,16 +149,14 @@
             }, 3000);
           }
 
-          reloadButton.addEventListener("click", () => {
-            history.replaceState(null, "", `${location.pathname}${location.search}#dates`);
-            startCalendar(true);
-          });
+          reloadButton.addEventListener("click", reloadCalendarPage);
 
           document.querySelectorAll('a[href="#dates"]').forEach(link => {
-            link.addEventListener("click", () => {
-              setTimeout(() => {
-                if (!widgetHasContent()) startCalendar(true);
-              }, 100);
+            link.addEventListener("click", event => {
+              if (!widgetHasContent()) {
+                event.preventDefault();
+                reloadCalendarPage();
+              }
             });
           });
 
@@ -164,7 +167,7 @@
           window.addEventListener("hashchange", () => {
             if (location.hash === "#/home" || location.hash === "#dates") {
               setTimeout(() => {
-                if (!widgetHasContent()) startCalendar(true);
+                if (!widgetHasContent()) reloadCalendarPage();
               }, 500);
             }
           });
