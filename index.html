@@ -101,9 +101,79 @@
       </div>
       <div class="calendar-shell">
         <div id="hr-widget" aria-label="Календарь свободных дат и бронирование"></div>
+        <div class="calendar-fallback" id="calendar-fallback" hidden>
+          <p>Календарь не загрузился или вы вернулись после просмотра бронирования.</p>
+          <button class="button primary" id="reload-calendar" type="button">Показать календарь</button>
+          <a href="https://homereserve.ru/53mSFF5LB7" target="_blank" rel="noopener">Открыть бронирование отдельно</a>
+        </div>
         <script type="module" src="https://homereserve.ru/widget.js"></script>
         <script type="module">
-          window.homereserve.initWidgetList({"token":"53mSFF5LB7","apartments":[305401]})
+          const widgetConfig = {"token":"53mSFF5LB7","apartments":[305401]};
+          const widget = document.getElementById("hr-widget");
+          const fallback = document.getElementById("calendar-fallback");
+          const reloadButton = document.getElementById("reload-calendar");
+          let widgetWasVisible = false;
+
+          function widgetHasContent() {
+            return Boolean(widget && (widget.children.length || widget.textContent.trim()));
+          }
+
+          async function startCalendar(clearFirst = false) {
+            fallback.hidden = true;
+            if (clearFirst) widget.replaceChildren();
+
+            for (let attempt = 0; attempt < 20; attempt += 1) {
+              if (window.homereserve?.initWidgetList) {
+                try {
+                  window.homereserve.initWidgetList(widgetConfig);
+                  break;
+                } catch (error) {
+                  console.warn("HomeReserve is not ready yet", error);
+                }
+              }
+              await new Promise(resolve => setTimeout(resolve, 250));
+            }
+
+            setTimeout(() => {
+              if (widgetHasContent()) {
+                widgetWasVisible = true;
+                fallback.hidden = true;
+              } else {
+                fallback.hidden = false;
+              }
+            }, 3000);
+          }
+
+          reloadButton.addEventListener("click", () => {
+            history.replaceState(null, "", `${location.pathname}${location.search}#dates`);
+            startCalendar(true);
+          });
+
+          document.querySelectorAll('a[href="#dates"]').forEach(link => {
+            link.addEventListener("click", () => {
+              setTimeout(() => {
+                if (!widgetHasContent()) startCalendar(true);
+              }, 100);
+            });
+          });
+
+          window.addEventListener("pageshow", event => {
+            if (event.persisted || !widgetHasContent()) startCalendar(true);
+          });
+
+          window.addEventListener("hashchange", () => {
+            if (location.hash === "#/home" || location.hash === "#dates") {
+              setTimeout(() => {
+                if (!widgetHasContent()) startCalendar(true);
+              }, 500);
+            }
+          });
+
+          document.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "visible" && !widgetHasContent()) startCalendar(true);
+          });
+
+          startCalendar();
         </script>
       </div>
     </section>
