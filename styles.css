@@ -49,8 +49,8 @@ body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);f
 .sleep-photo-frame img{width:100%;height:100%;object-fit:cover}
 .sleep-photo-frame:nth-child(2){margin-top:56px}
 .hallway-photo img{transform:scale(1.8)}
-.sleep-photos.travel-quote-photo{display:block}
-.travel-quote-frame{height:auto;aspect-ratio:16/9}
+.sleep-photos.travel-quote-photo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.travel-quote-photo .travel-quote-frame{height:auto;aspect-ratio:16/9;margin-top:0}
 .travel-quote-frame img{object-position:center}
 .details{padding-top:60px}
 .detail-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
@@ -92,6 +92,7 @@ footer a{color:#fff;text-decoration:none}
 .quote{background-attachment:scroll}
 }
 @media(max-width:560px){.topbar{height:64px}
+.sleep-photos.travel-quote-photo{grid-template-columns:1fr}
 .top-action{font-size:.85rem}
 .hero-copy{padding:0 22px 48px}
 .hero h1{font-size:2.55rem}
