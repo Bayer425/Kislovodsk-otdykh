@@ -133,3 +133,26 @@ footer{align-items:flex-start;gap:24px;flex-direction:column}
   .booking-intro{padding:25px}
   .calendar-shell{padding:10px;border-radius:18px;min-height:500px}
 }
+
+
+/* Guest instructions */
+.guest-guide-cta{margin-top:28px;padding:30px 34px;border-radius:22px;background:var(--forest);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.guest-guide-cta .eyebrow{margin-bottom:8px}
+.guest-guide-cta h3{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.35rem);font-weight:400;margin:0 0 6px}
+.guest-guide-cta p:last-child{margin:0;color:rgba(255,255,255,.75)}
+.guest-guide-cta .button{background:var(--sand);color:var(--forest);flex:0 0 auto}
+.guest-page .topbar{position:static}
+.guide-main{max-width:1200px;margin:0 auto;padding:76px 28px 110px}
+.guide-intro{max-width:760px;margin-bottom:42px}
+.guide-intro h1{font-family:var(--serif);font-weight:400;color:var(--forest);font-size:clamp(2.5rem,5vw,4.8rem);line-height:1.1;margin:0 0 18px}
+.guide-intro>p:last-child{font-size:1.06rem;color:var(--muted)}
+.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+.guide-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:18px;box-shadow:0 14px 40px rgba(31,44,36,.08)}
+.guide-card h2{font-family:var(--serif);font-size:1.65rem;font-weight:400;color:var(--forest);margin:3px 4px 14px}
+.guide-card a{display:block;border-radius:16px;overflow:hidden;background:#eee}
+.guide-card img{display:block;width:100%;height:auto}
+.guide-card p{font-size:.87rem;color:var(--muted);margin:12px 4px 2px}
+.guide-card.tv-guide{grid-column:1/-1}
+.guide-card.tv-guide a{max-width:760px;margin:0 auto}
+.guide-back{display:inline-flex;margin-top:34px;color:var(--forest);font-weight:700;text-decoration:none;border-bottom:1px solid currentColor}
+@media(max-width:700px){.guest-guide-cta{align-items:flex-start;flex-direction:column;padding:26px}.guide-main{padding:52px 18px 80px}.guide-grid{grid-template-columns:1fr}.guide-card.tv-guide{grid-column:auto}}
