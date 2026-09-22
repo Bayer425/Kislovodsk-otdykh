@@ -66,9 +66,9 @@
 
     <section class="walks section" id="old-lake">
       <div class="section-heading">
-        <p class="eyebrow dark">Спокойная прогулка на полдня</p>
-        <h2>Комсомольский парк и Старое озеро</h2>
-        <p>Маршрут для неспешного дня без суеты центра: пройти по обновлённому Комсомольскому парку, выйти к воде и погулять по набережной Старого озера.</p>
+        <p class="eyebrow dark">Один из тех дней, ради которых едут в Кисловодск</p>
+        <h2>День у воды</h2>
+        <p>Представьте: вы выходите из квартиры без спешки, проходите через тихий сосновый парк и вдруг оказываетесь у озера. Здесь можно взять кофе, устроить маленький пикник, пройти вдоль воды и дождаться вечера, когда на набережной зажигаются фонари.</p>
       </div>
 
       <article class="walk-card">
@@ -79,8 +79,11 @@
           <i>→</i><strong>Квартира</strong>
         </div>
         <div class="walk-actions">
-          <p>Если хочется набрать около 10&nbsp;000 шагов, обойдите озеро и возвращайтесь домой пешком. Вечером у воды особенно красиво, когда зажигаются фонари.</p>
-          <a class="button primary" href="https://yandex.ru/maps/11062/kislovodsk/?mode=routes&amp;rtext=43.916947%2C42.716563~%D0%9A%D0%BE%D0%BC%D1%81%D0%BE%D0%BC%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D0%B0%D1%80%D0%BA%2C%20%D0%9A%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D0%BA~%D0%A1%D1%82%D0%B0%D1%80%D0%BE%D0%B5%20%D0%BE%D0%B7%D0%B5%D1%80%D0%BE%2C%20%D0%9A%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D0%BA~43.916947%2C42.716563&amp;rtt=pd" target="_blank" rel="noopener">Открыть всю прогулку</a>
+          <p><strong>Личный совет:</strong> не торопитесь обратно. Обойдите озеро, выберите место у воды и останьтесь до вечерней подсветки. Если идти весь путь пешком, получится около 10&nbsp;000 шагов — приятный день, который потом хочется вспоминать.</p>
+          <div class="walk-action-buttons">
+            <button class="button share-button" id="share-lake" type="button">Показать другу, куда мы едем</button>
+            <a class="button primary" href="https://yandex.ru/maps/11062/kislovodsk/?mode=routes&amp;rtext=43.916947%2C42.716563~%D0%9A%D0%BE%D0%BC%D1%81%D0%BE%D0%BC%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D0%B0%D1%80%D0%BA%2C%20%D0%9A%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D0%BA~%D0%A1%D1%82%D0%B0%D1%80%D0%BE%D0%B5%20%D0%BE%D0%B7%D0%B5%D1%80%D0%BE%2C%20%D0%9A%D0%B8%D1%81%D0%BB%D0%BE%D0%B4%D1%81%D0%BA~43.916947%2C42.716563&amp;rtt=pd" target="_blank" rel="noopener">Открыть маршрут</a>
+          </div>
         </div>
       </article>
 
@@ -102,5 +105,29 @@
     <div><strong>Квартира для отдыха и перезагрузки</strong><span>Кисловодск, ул. Куйбышева, 79</span></div>
     <a href="index.html">На главную</a>
   </footer>
+  <script>
+    const shareLake = document.querySelector('#share-lake');
+    shareLake?.addEventListener('click', async () => {
+      const url = `${window.location.origin}${window.location.pathname}#old-lake`;
+      const shareData = {
+        title: 'Посмотри, куда мы едем!',
+        text: 'День у воды в Кисловодске: тихий парк, прогулка вокруг озера и вечерние огни.',
+        url
+      };
+
+      if (navigator.share) {
+        try { await navigator.share(shareData); } catch (error) { /* Пользователь закрыл меню */ }
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(`${shareData.text} ${url}`);
+        shareLake.textContent = 'Ссылка скопирована';
+        setTimeout(() => { shareLake.textContent = 'Показать другу, куда мы едем'; }, 2400);
+      } catch (error) {
+        window.prompt('Скопируйте ссылку и отправьте другу:', url);
+      }
+    });
+  </script>
 </body>
 </html>
