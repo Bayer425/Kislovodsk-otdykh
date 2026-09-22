@@ -187,7 +187,10 @@ footer{align-items:flex-start;gap:24px;flex-direction:column}
 .walk-actions{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-top:25px;padding-top:22px;border-top:1px solid var(--line)}
 .walk-actions p{max-width:760px;margin:0;color:var(--muted);line-height:1.65}
 .walk-actions .button{flex:0 0 auto}
+.walk-action-buttons{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.share-button{background:var(--sand);color:var(--forest);border-color:#d7c4a5}
 @media(max-width:700px){.walk-card{padding:22px}.walk-route{align-items:flex-start;flex-direction:column}.walk-route i{transform:rotate(90deg);margin-left:8px}.walk-actions{align-items:stretch;flex-direction:column}.walk-actions .button{text-align:center}}
+@media(max-width:700px){.walk-action-buttons{align-items:stretch;flex-direction:column}.walk-action-buttons .button{width:100%}}
 
 
 /* Walking tour stops */
