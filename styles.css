@@ -208,14 +208,6 @@ footer{align-items:flex-start;gap:24px;flex-direction:column}
 .photo-credit{margin:10px 4px 0;color:var(--muted);font-size:.76rem}
 @media(max-width:800px){.lake-photo-grid{grid-template-columns:1fr}.lake-photo-card,.lake-photo-card-main{grid-row:auto;min-height:460px}}
 
-.park-preview{margin:42px 0 54px}
-.park-preview-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:18px;align-items:stretch}
-.park-preview-photo{position:relative;margin:0;min-height:430px;border-radius:24px;overflow:hidden;background:#263c31}
-.park-preview-photo-tall{min-height:600px}
-.park-preview-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.park-preview-photo figcaption{position:absolute;left:18px;right:18px;bottom:18px;padding:13px 16px;border-radius:14px;background:rgba(22,39,31,.78);color:#fff;font-weight:600;backdrop-filter:blur(8px)}
-@media(max-width:800px){.park-preview-grid{grid-template-columns:1fr}.park-preview-photo,.park-preview-photo-tall{min-height:430px}}
-
 .playground-feature{margin:54px 0 44px;padding:34px;border-radius:28px;background:#f2ede3}
 .playground-grid{display:grid;grid-template-columns:1.08fr .92fr;grid-template-rows:repeat(2,310px);gap:16px}
 .playground-photo{position:relative;margin:0;border-radius:22px;overflow:hidden;background:#d8d2c6}
@@ -223,6 +215,22 @@ footer{align-items:flex-start;gap:24px;flex-direction:column}
 .playground-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .playground-photo figcaption{position:absolute;left:16px;right:16px;bottom:16px;padding:12px 15px;border-radius:14px;background:rgba(250,248,242,.9);color:var(--forest);font-weight:600;line-height:1.35;backdrop-filter:blur(8px)}
 @media(max-width:800px){.playground-feature{padding:22px 16px}.playground-grid{grid-template-columns:1fr;grid-template-rows:none}.playground-photo,.playground-photo-main{grid-row:auto;height:430px}}
+
+.park-story{padding-top:84px;padding-bottom:84px}
+.park-story-layout{display:grid;grid-template-columns:minmax(320px,.85fr) minmax(0,1.15fr);gap:clamp(34px,6vw,82px);align-items:start}
+.park-story-photo{position:sticky;top:26px;margin:0}
+.park-story-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:28px}
+.park-story-photo figcaption{margin:10px 4px 0;color:var(--muted);font-size:.8rem}
+.park-story-copy h2{font-family:var(--serif);font-size:clamp(2.4rem,5vw,5rem);font-weight:400;line-height:1.04;color:var(--forest);margin:12px 0 30px}
+.park-story-copy>p{font-size:1.04rem;line-height:1.8;color:var(--muted)}
+.park-story-more{margin:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.park-story-more summary{cursor:pointer;padding:20px 0;font-weight:700;color:var(--forest);list-style:none}
+.park-story-more summary::after{content:"＋";float:right;font-size:1.25rem}
+.park-story-more[open] summary::after{content:"−"}
+.park-story-more div{padding:0 0 12px}
+.park-story-more p{color:var(--muted);line-height:1.75}
+.park-story-copy blockquote{margin:32px 0 0;padding:26px 28px;border-radius:22px;background:var(--forest);color:#fff;font-family:var(--serif);font-size:clamp(1.25rem,2vw,1.65rem);line-height:1.55}
+@media(max-width:800px){.park-story{padding-top:62px;padding-bottom:62px}.park-story-layout{grid-template-columns:1fr}.park-story-photo{position:static}.park-story-photo img{max-height:680px}.park-story-copy h2{font-size:clamp(2.25rem,11vw,3.5rem)}}
 
 
 /* Walking tour stops */
