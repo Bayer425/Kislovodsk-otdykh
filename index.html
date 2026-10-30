@@ -54,7 +54,9 @@
         <button class="room-photo-button" type="button" data-room-open="first-bedroom-dialog" aria-haspopup="dialog" aria-controls="first-bedroom-dialog">
           <figure class="photo"><img src="assets/hero-bedroom.jpg" alt="Первая спальня с двуспальной кроватью"><figcaption>Первая спальня<span>Нажмите, чтобы посмотреть</span></figcaption></figure>
         </button>
-        <figure class="photo"><img src="assets/second-bedroom.jpg" alt="Вторая спальня с двуспальной кроватью"><figcaption>Вторая спальня</figcaption></figure>
+        <button class="room-photo-button" type="button" data-room-open="second-bedroom-dialog" aria-haspopup="dialog" aria-controls="second-bedroom-dialog">
+          <figure class="photo"><img src="assets/second-bedroom.jpg" alt="Вторая спальня с двуспальной кроватью"><figcaption>Вторая спальня<span>Нажмите, чтобы посмотреть</span></figcaption></figure>
+        </button>
         <figure class="photo breakfast-photo"><img src="assets/breakfast.jpg" alt="Солнечный завтрак с круассанами, кофе, ягодами и соком"><figcaption>Завтраки без спешки</figcaption></figure>
         <figure class="photo"><img src="assets/kitchen-table.jpg" alt="Накрытый стол с бокалами вина"><figcaption>Вечера за бокалом вина и разговорами о прошедшем дне</figcaption></figure>
         <figure class="photo"><img src="assets/living-room.jpg" alt="Уютная гостиная с диванами"><figcaption>Гостиная для общих вечеров</figcaption></figure>
@@ -232,6 +234,26 @@
         <p>В спальне стоит двуспальная кровать с ортопедическим матрасом. Утром сюда заглядывает солнце, но плотные шторы блэкаут позволяют спокойно выспаться.</p>
         <h3>Солнечный балкон</h3>
         <p>Из спальни можно выйти на балкон, устроиться в кресле и неспешно выпить кофе или ароматный чай среди зелени.</p>
+      </div>
+    </div>
+  </dialog>
+
+
+  <dialog class="room-dialog" id="second-bedroom-dialog" aria-labelledby="second-bedroom-title">
+    <div class="room-dialog-card">
+      <button class="room-dialog-close" type="button" data-room-close aria-label="Закрыть">×</button>
+      <div class="room-dialog-gallery">
+        <figure class="room-dialog-main"><img src="assets/second-bedroom.jpg" alt="Вторая спальня"></figure>
+        <figure><img src="assets/second-bedroom-reading.webp" alt="Уютное кресло для чтения во второй спальне"></figure>
+        <figure><img src="assets/second-bedroom-workspace.webp" alt="Рабочее место на застеклённой лоджии"></figure>
+      </div>
+      <div class="room-dialog-copy">
+        <p class="eyebrow dark">Своё пространство для отдыха и работы</p>
+        <h2 id="second-bedroom-title">Вторая спальня</h2>
+        <p>Здесь легко закрыть дверь и остаться наедине с собой. Устроиться в мягком кресле под тёплым светом торшера, взять книгу, укутаться в плед и никуда не спешить.</p>
+        <h3>Рабочее место</h3>
+        <p>А если даже в отпуске нужно ненадолго вернуться к делам, на застеклённой лоджии есть отдельное рабочее место. Можно открыть ноутбук, провести видеозвонок или спокойно поработать, пока остальные отдыхают в гостиной.</p>
+        <p>Вечером — тишина и удобная двуспальная кровать с ортопедическим матрасом. Утром — свет из окна и новый день в Кисловодске.</p>
       </div>
     </div>
   </dialog>
