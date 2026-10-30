@@ -264,3 +264,42 @@ footer{align-items:flex-start;gap:24px;flex-direction:column}
 .walks-back{padding-top:10px}
 .dark-button{border-color:var(--forest);color:var(--forest)}
 @media(max-width:700px){.walks-page{padding-top:66px}.walks-hero{min-height:430px;margin:0 10px}.walks-hero>div:last-child{padding:30px 24px}.walks-hero h1{font-size:2.7rem}}
+
+
+/* Route 3: old resort and Lenina promenade */
+.heritage-route{display:grid;gap:34px}
+.heritage-heading{max-width:860px}
+.heritage-map{border-color:rgba(122,91,47,.24);box-shadow:0 22px 60px rgba(56,45,31,.09)}
+.heritage-lead-grid,.heritage-copy-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:28px;align-items:stretch}
+.heritage-photo{margin:0;position:relative;overflow:hidden;border-radius:28px;background:#e8e5dc;min-height:360px}
+.heritage-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.heritage-photo figcaption{position:absolute;left:18px;right:18px;bottom:18px;padding:14px 18px;border-radius:18px;background:rgba(250,248,241,.9);color:#243b32;font-weight:700;backdrop-filter:blur(8px)}
+.heritage-story{padding:30px;border-radius:28px;background:#f4efe5;color:#30453c}
+.heritage-story h3,.heritage-finish h3{margin:8px 0 14px;font-family:Prata,serif;font-size:clamp(1.45rem,2.8vw,2.05rem);font-weight:400}
+.heritage-story p,.heritage-finish p,.heritage-tip p{line-height:1.72}
+.heritage-number{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;border-radius:50%;background:#243b32;color:#fff;font-weight:700}
+.heritage-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.heritage-steps article{padding:26px;border-radius:24px;background:#fff;border:1px solid rgba(36,59,50,.12)}
+.heritage-steps span{color:#956e38;font-size:.82rem;font-weight:800;letter-spacing:.12em}
+.heritage-steps h3{margin:10px 0;font-family:Prata,serif;font-size:1.45rem;font-weight:400}
+.heritage-steps p{line-height:1.65}
+.heritage-tip{padding:24px 28px;border-radius:24px;background:#243b32;color:#fff}
+.heritage-tip strong{font-family:Prata,serif;font-size:1.45rem;font-weight:400}
+.heritage-gallery{display:grid;grid-template-columns:.85fr 1.15fr;gap:22px}
+.heritage-gallery .heritage-photo{min-height:470px}
+.heritage-copy-grid{grid-template-columns:1fr 1fr}
+.heritage-water{align-items:stretch}
+.heritage-finish{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.heritage-finish article{padding:26px;border-radius:24px;background:#fff;border:1px solid rgba(36,59,50,.12)}
+.heritage-finish .heritage-return{grid-column:1/-1;background:#e6efe9;border:none}
+@media(max-width:860px){
+  .heritage-lead-grid,.heritage-copy-grid,.heritage-gallery,.heritage-steps,.heritage-finish{grid-template-columns:1fr}
+  .heritage-photo,.heritage-gallery .heritage-photo{min-height:330px}
+  .heritage-finish .heritage-return{grid-column:auto}
+}
+@media(max-width:560px){
+  .heritage-route{gap:24px}
+  .heritage-story,.heritage-steps article,.heritage-finish article{padding:22px}
+  .heritage-photo,.heritage-gallery .heritage-photo{min-height:285px;border-radius:22px}
+  .heritage-photo figcaption{left:12px;right:12px;bottom:12px}
+}
