@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#243b32">
+  <meta name="description" content="Где поесть в Кисловодске: авторский рейтинг заведений по категориям.">
+  <title>Где поесть в Кисловодске</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Prata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20261030-4">
+  <style>
+    .food-page{padding-top:74px;background:#f8f5ee}
+    .food-hero{padding:84px clamp(22px,7vw,100px) 62px;background:linear-gradient(135deg,#1d342b,#365344);color:#fff}
+    .food-hero-inner{max-width:1180px;margin:auto}
+    .food-hero h1{max-width:800px;margin:12px 0 20px;font:400 clamp(2.8rem,7vw,6rem)/1.02 Prata,serif}
+    .food-hero p:last-child{max-width:720px;margin:0;color:rgba(255,255,255,.78);font-size:1.08rem;line-height:1.7}
+    .food-main{max-width:1180px;margin:auto;padding:42px 22px 100px}
+    .food-tabs{display:flex;gap:10px;overflow-x:auto;padding:0 0 18px;scrollbar-width:none}
+    .food-tabs::-webkit-scrollbar{display:none}
+    .food-tab{white-space:nowrap;padding:12px 17px;border:1px solid #d8d1c5;border-radius:999px;background:#fff;color:#6c716d;font:700 .82rem Manrope,sans-serif}
+    .food-tab.active{border-color:#243b32;background:#243b32;color:#fff}
+    .food-category{padding-top:32px}
+    .food-category-head{max-width:760px;margin-bottom:30px}
+    .food-category-head h2{margin:8px 0 12px;color:#243b32;font:400 clamp(2.3rem,5vw,4.5rem)/1.08 Prata,serif}
+    .food-category-head p:last-child{color:#6d746f;line-height:1.7}
+    .venue-list{display:grid;gap:24px}
+    .venue-card{display:grid;grid-template-columns:210px 1fr;border:1px solid #ded8cd;border-radius:28px;background:#fff;overflow:hidden;box-shadow:0 18px 50px rgba(31,44,36,.07)}
+    .venue-rank{padding:32px 26px;background:#efe7d8;display:flex;flex-direction:column;justify-content:space-between}
+    .venue-rank strong{font:400 4.2rem/1 Prata,serif;color:#243b32}
+    .venue-rank span{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;color:#8c7047}
+    .venue-body{padding:32px 36px}
+    .venue-top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+    .venue-top h3{margin:0;color:#243b32;font:400 clamp(1.8rem,3vw,2.6rem)/1.15 Prata,serif}
+    .score{flex:0 0 auto;padding:9px 12px;border-radius:12px;background:#e3eee7;color:#243b32;font-weight:800}
+    .venue-lead{margin:14px 0 22px;color:#59615d;line-height:1.7}
+    .feature-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;margin:0 0 24px;padding:0;list-style:none}
+    .feature-list li{position:relative;padding-left:20px;color:#444d48;font-size:.9rem;line-height:1.5}
+    .feature-list li::before{content:"✦";position:absolute;left:0;color:#a47c45}
+    .booking-note{margin:0 0 24px;padding:15px 17px;border-radius:15px;background:#f4eee3;color:#3e4943;line-height:1.55}
+    .booking-note strong{color:#243b32}
+    .venue-meta{display:flex;gap:12px 22px;flex-wrap:wrap;margin-bottom:22px;color:#6b726e;font-size:.86rem}
+    .venue-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .venue-actions a{padding:11px 15px;border-radius:12px;text-decoration:none;font-size:.82rem;font-weight:800}
+    .venue-actions .main-link{background:#243b32;color:#fff}
+    .venue-actions .soft-link{border:1px solid #cbc4b8;color:#243b32;background:#fff}
+    .food-note{margin-top:28px;padding:20px 22px;border-radius:18px;background:#ece7dd;color:#626963;line-height:1.65;font-size:.88rem}
+    .food-back{display:inline-flex;margin-top:36px;color:#243b32;font-weight:800;text-decoration:none;border-bottom:1px solid currentColor}
+    @media(max-width:720px){
+      .food-page{padding-top:64px}.food-hero{padding:58px 20px 45px}
+      .food-main{padding:28px 14px 72px}.food-category{padding-top:20px}
+      .venue-card{grid-template-columns:1fr}.venue-rank{padding:18px 22px;flex-direction:row;align-items:center}
+      .venue-rank strong{font-size:2.8rem}.venue-body{padding:25px 21px}
+      .venue-top{gap:12px}.feature-list{grid-template-columns:1fr}
+      .venue-actions{flex-direction:column}.venue-actions a{text-align:center}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Вернуться на главную">
+      <span class="brand-mark">К</span><span>Кисловодск</span>
+    </a>
+  </header>
+
+  <main class="food-page">
+    <section class="food-hero">
+      <div class="food-hero-inner">
+        <p class="eyebrow">Гастрономический путеводитель</p>
+        <h1>Где поесть в Кисловодске</h1>
+        <p>Не просто список кафе, а рейтинг по настроению и случаю: от быстрого завтрака до вечера, который запомнится надолго.</p>
+      </div>
+    </section>
+
+    <div class="food-main">
+      <nav class="food-tabs" aria-label="Категории заведений">
+        <span class="food-tab active">Ужин как событие</span>
+        <span class="food-tab">Кавказская кухня — скоро</span>
+        <span class="food-tab">Завтраки и кофе — скоро</span>
+        <span class="food-tab">Вкусно и недорого — скоро</span>
+        <span class="food-tab">С детьми — скоро</span>
+        <span class="food-tab">Легенды города — скоро</span>
+      </nav>
+
+      <section class="food-category">
+        <div class="food-category-head">
+          <p class="eyebrow dark">Первая категория</p>
+          <h2>Ужин как событие</h2>
+          <p>Два места, куда приходят не только ради еды. Здесь ужин становится спектаклем, путешествием или красивым завершением дня.</p>
+        </div>
+
+        <div class="venue-list">
+          <article class="venue-card">
+            <div class="venue-rank"><strong>01</strong><span>Гастротеатр</span></div>
+            <div class="venue-body">
+              <div class="venue-top"><h3>Green Wood</h3><span class="score">9,4 / 10</span></div>
+              <p class="venue-lead">Зачарованный лес, фасад с бабочками, открытая кухня и эффектная подача. Сюда приходят за красивым вечером и яркими впечатлениями.</p>
+              <ul class="feature-list">
+                <li>интерьер волшебного леса</li>
+                <li>необычная подача блюд</li>
+                <li>десерты с сюрпризами</li>
+                <li>вечерняя программа и музыка</li>
+                <li>для свидания или праздника</li>
+                <li>высокий уровень цен · ₽₽₽</li>
+              </ul>
+              <p class="booking-note"><strong>Бронирование:</strong> вечером обязательно. При звонке уточните время шоу, зал и возможную дополнительную плату за программу.</p>
+              <div class="venue-meta"><span>ул. Шаляпина, 10</span><span>+7 906 412-84-12</span></div>
+              <div class="venue-actions">
+                <a class="main-link" href="https://yandex.ru/maps/org/grinvud/194158144174/" target="_blank" rel="noopener">Открыть на карте</a>
+                <a class="soft-link" href="tel:+79064128412">Позвонить</a>
+                <a class="soft-link" href="https://green-wood-ulitsa-shaljapina.clients.site/" target="_blank" rel="noopener">Информация и отзывы</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="venue-card">
+            <div class="venue-rank"><strong>02</strong><span>Театр-музей</span></div>
+            <div class="venue-body">
+              <div class="venue-top"><h3>«Благодать»</h3><span class="score">9,1 / 10</span></div>
+              <p class="venue-lead">Целый вечер в атмосфере старого Кисловодска: история города, камерный спектакль, живая музыка и театрализованный ужин при свечах.</p>
+              <ul class="feature-list">
+                <li>домашний камерный театр</li>
+                <li>историческая гостиная</li>
+                <li>авторский спектакль</li>
+                <li>ужин с актёрами и музыкантами</li>
+                <li>вечер длится около четырёх часов</li>
+                <li>еда — часть представления</li>
+              </ul>
+              <p class="booking-note"><strong>Бронирование:</strong> обязательно и заранее. Билет приобретают на определённую дату и спектакль; перед посещением проверьте актуальную афишу.</p>
+              <div class="venue-meta"><span>проспект Дзержинского, 11а</span><span>+7 906 413-03-20</span></div>
+              <div class="venue-actions">
+                <a class="main-link" href="https://tmblagodat.ru/afisha/" target="_blank" rel="noopener">Посмотреть афишу</a>
+                <a class="soft-link" href="tel:+79064130320">Позвонить</a>
+                <a class="soft-link" href="https://yandex.ru/maps/org/blagodat/1202922358/" target="_blank" rel="noopener">Открыть на карте</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="food-note">Рейтинг составлен по совокупности впечатления, атмосферы, кухни, сервиса и отзывов гостей. Расписание, стоимость и условия программы могут меняться — перед визитом лучше уточнить их у заведения.</p>
+      </section>
+
+      <a class="food-back" href="index.html">← Вернуться на главную</a>
+    </div>
+  </main>
+</body>
+</html>
