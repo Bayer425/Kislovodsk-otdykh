@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Prata&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261030-3">
 </head>
 <body>
   <header class="topbar">
@@ -51,7 +51,9 @@
       </div>
 
       <div class="story-grid">
-        <figure class="photo"><img src="assets/hero-bedroom.jpg" alt="Первая спальня с двуспальной кроватью"><figcaption>Первая спальня</figcaption></figure>
+        <button class="room-photo-button" type="button" data-room-open="first-bedroom-dialog" aria-haspopup="dialog" aria-controls="first-bedroom-dialog">
+          <figure class="photo"><img src="assets/hero-bedroom.jpg" alt="Первая спальня с двуспальной кроватью"><figcaption>Первая спальня<span>Нажмите, чтобы посмотреть</span></figcaption></figure>
+        </button>
         <figure class="photo"><img src="assets/second-bedroom.jpg" alt="Вторая спальня с двуспальной кроватью"><figcaption>Вторая спальня</figcaption></figure>
         <figure class="photo breakfast-photo"><img src="assets/breakfast.jpg" alt="Солнечный завтрак с круассанами, кофе, ягодами и соком"><figcaption>Завтраки без спешки</figcaption></figure>
         <figure class="photo"><img src="assets/kitchen-table.jpg" alt="Накрытый стол с бокалами вина"><figcaption>Вечера за бокалом вина и разговорами о прошедшем дне</figcaption></figure>
@@ -215,9 +217,45 @@
     </section>
   </main>
 
+
+  <dialog class="room-dialog" id="first-bedroom-dialog" aria-labelledby="first-bedroom-title">
+    <div class="room-dialog-card">
+      <button class="room-dialog-close" type="button" data-room-close aria-label="Закрыть">×</button>
+      <div class="room-dialog-gallery">
+        <figure class="room-dialog-main"><img src="assets/hero-bedroom.jpg" alt="Первая спальня"></figure>
+        <figure><img src="assets/first-bedroom-balcony.webp" alt="Солнечный балкон при первой спальне с креслом"></figure>
+        <figure><img src="assets/first-bedroom-balcony-tea.webp" alt="Утренний чай на балконе"></figure>
+      </div>
+      <div class="room-dialog-copy">
+        <p class="eyebrow dark">Комната для спокойного отдыха</p>
+        <h2 id="first-bedroom-title">Первая спальня с солнечным балконом</h2>
+        <p>В спальне стоит двуспальная кровать с ортопедическим матрасом. Утром сюда заглядывает солнце, но плотные шторы блэкаут позволяют спокойно выспаться.</p>
+        <h3>Солнечный балкон</h3>
+        <p>Из спальни можно выйти на балкон, устроиться в кресле и неспешно выпить кофе или ароматный чай среди зелени.</p>
+      </div>
+    </div>
+  </dialog>
+
   <footer>
     <div><strong>Квартира для отдыха и перезагрузки</strong><span>Кисловодск, ул. Куйбышева, 79</span></div>
     <a href="#top">Наверх ↑</a>
   </footer>
+
+  <script>
+    document.querySelectorAll('[data-room-open]').forEach(button => {
+      button.addEventListener('click', () => {
+        const dialog = document.getElementById(button.dataset.roomOpen);
+        dialog?.showModal();
+      });
+    });
+    document.querySelectorAll('[data-room-close]').forEach(button => {
+      button.addEventListener('click', () => button.closest('dialog')?.close());
+    });
+    document.querySelectorAll('.room-dialog').forEach(dialog => {
+      dialog.addEventListener('click', event => {
+        if (event.target === dialog) dialog.close();
+      });
+    });
+  </script>
 </body>
 </html>
