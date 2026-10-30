@@ -19,7 +19,7 @@
     .food-main{max-width:1180px;margin:auto;padding:42px 22px 100px}
     .food-tabs{display:flex;gap:10px;overflow-x:auto;padding:0 0 18px;scrollbar-width:none}
     .food-tabs::-webkit-scrollbar{display:none}
-    .food-tab{white-space:nowrap;padding:12px 17px;border:1px solid #d8d1c5;border-radius:999px;background:#fff;color:#6c716d;font:700 .82rem Manrope,sans-serif}
+    .food-tab{text-decoration:none;white-space:nowrap;padding:12px 17px;border:1px solid #d8d1c5;border-radius:999px;background:#fff;color:#6c716d;font:700 .82rem Manrope,sans-serif}
     .food-tab.active{border-color:#243b32;background:#243b32;color:#fff}
     .food-category{padding-top:32px}
     .food-category-head{max-width:760px;margin-bottom:30px}
@@ -75,15 +75,15 @@
 
     <div class="food-main">
       <nav class="food-tabs" aria-label="Категории заведений">
-        <span class="food-tab active">Ужин как событие</span>
-        <span class="food-tab">Кавказская кухня — скоро</span>
+        <a class="food-tab active" href="#event-dinner">Ужин как событие</a>
+        <a class="food-tab" href="#caucasus">Кавказская кухня</a>
         <span class="food-tab">Завтраки и кофе — скоро</span>
         <span class="food-tab">Вкусно и недорого — скоро</span>
         <span class="food-tab">С детьми — скоро</span>
         <span class="food-tab">Легенды города — скоро</span>
       </nav>
 
-      <section class="food-category">
+      <section class="food-category" id="event-dinner">
         <div class="food-category-head">
           <p class="eyebrow dark">Первая категория</p>
           <h2>Ужин как событие</h2>
@@ -139,6 +139,132 @@
         </div>
 
         <p class="food-note">Рейтинг составлен по совокупности впечатления, атмосферы, кухни, сервиса и отзывов гостей. Расписание, стоимость и условия программы могут меняться — перед визитом лучше уточнить их у заведения.</p>
+      </section>
+
+      <section class="food-category" id="caucasus">
+        <div class="food-category-head">
+          <p class="eyebrow dark">Вторая категория</p>
+          <h2>Кавказская кухня</h2>
+          <p>Пять разных вариантов — от красивого ресторанного вечера до вкусных хинкали без большой переплаты.</p>
+        </div>
+
+        <div class="venue-list">
+          <article class="venue-card">
+            <div class="venue-rank"><strong>01</strong><span>Универсальный выбор</span></div>
+            <div class="venue-body">
+              <div class="venue-top"><h3>«Мамалыга»</h3><span class="score">9,5 / 10</span></div>
+              <p class="venue-lead">Сильный ресторан кавказской кухни на Курортном бульваре. Подойдёт и паре, и семье с детьми, и большой компании.</p>
+              <ul class="feature-list">
+                <li>мамалыга с тремя видами сыра</li>
+                <li>хинкали, харчо и ягнёнок</li>
+                <li>детское меню и раскраски</li>
+                <li>летняя веранда</li>
+                <li>быстрая подача</li>
+                <li>средний уровень цен · ₽₽</li>
+              </ul>
+              <p class="booking-note"><strong>Бронирование:</strong> вечером и в выходные лучше забронировать столик заранее.</p>
+              <div class="venue-meta"><span>Курортный бульвар, 5</span><span>+7 928 313-26-26</span></div>
+              <div class="venue-actions">
+                <a class="main-link" href="https://yandex.ru/maps/11062/kislovodsk/search/%D0%9C%D0%B0%D0%BC%D0%B0%D0%BB%D1%8B%D0%B3%D0%B0%20%D0%9A%D1%83%D1%80%D0%BE%D1%80%D1%82%D0%BD%D1%8B%D0%B9%20%D0%B1%D1%83%D0%BB%D1%8C%D0%B2%D0%B0%D1%80%205/" target="_blank" rel="noopener">Открыть на карте</a>
+                <a class="soft-link" href="tel:+79283132626">Позвонить</a>
+                <a class="soft-link" href="https://mamalyga.clients.site/" target="_blank" rel="noopener">Информация и отзывы</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="venue-card">
+            <div class="venue-rank"><strong>02</strong><span>Музыка и атмосфера</span></div>
+            <div class="venue-body">
+              <div class="venue-top"><h3>«Комбинат»</h3><span class="score">9,4 / 10</span></div>
+              <p class="venue-lead">Большой атмосферный ресторан рядом с Курортным бульваром: открытая кухня, блюда на углях и яркие вечера.</p>
+              <ul class="feature-list">
+                <li>хинкали, долма и чанахи</li>
+                <li>мясо и овощи на мангале</li>
+                <li>хлеб собственной выпечки</li>
+                <li>живая музыка по вечерам</li>
+                <li>детская комната</li>
+                <li>цены выше среднего · ₽₽₽</li>
+              </ul>
+              <p class="booking-note"><strong>Бронирование:</strong> вечером обязательно, особенно в пятницу и выходные. В отдельные дни проходят выступления и диджейские сеты — программу уточняйте при бронировании.</p>
+              <div class="venue-meta"><span>Первомайский проспект, 23</span><span>+7 928 011-60-00</span></div>
+              <div class="venue-actions">
+                <a class="main-link" href="https://yandex.ru/maps/org/kombinat/36661806058/" target="_blank" rel="noopener">Открыть на карте</a>
+                <a class="soft-link" href="tel:+79280116000">Позвонить</a>
+                <a class="soft-link" href="https://kombinat-rest.com/menu_25" target="_blank" rel="noopener">Посмотреть меню</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="venue-card">
+            <div class="venue-rank"><strong>03</strong><span>За вкусом</span></div>
+            <div class="venue-body">
+              <div class="venue-top"><h3>«Грузинские традиции»</h3><span class="score">9,3 / 10</span></div>
+              <p class="venue-lead">Не в туристическом центре, зато сюда едут специально ради грузинской кухни, гостеприимства и умеренных цен.</p>
+              <ul class="feature-list">
+                <li>хинкали и хачапури</li>
+                <li>шашлык и блюда на мангале</li>
+                <li>большие порции</li>
+                <li>собственная парковка</li>
+                <li>доставка и еда навынос</li>
+                <li>умеренные цены · ₽₽</li>
+              </ul>
+              <p class="booking-note"><strong>Бронирование:</strong> вечером желательно. Ресторан находится вдали от прогулочного центра — удобнее ехать на такси.</p>
+              <div class="venue-meta"><span>ул. Седлогорская, 118А/1</span><span>+7 938 357-01-11</span></div>
+              <div class="venue-actions">
+                <a class="main-link" href="https://yandex.ru/maps/11062/kislovodsk/search/%D0%93%D1%80%D1%83%D0%B7%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B5%20%D1%82%D1%80%D0%B0%D0%B4%D0%B8%D1%86%D0%B8%D0%B8/" target="_blank" rel="noopener">Открыть на карте</a>
+                <a class="soft-link" href="tel:+79383570111">Позвонить</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="venue-card">
+            <div class="venue-rank"><strong>04</strong><span>В центре событий</span></div>
+            <div class="venue-body">
+              <div class="venue-top"><h3>«Высота 5642»</h3><span class="score">9,1 / 10</span></div>
+              <p class="venue-lead">Адыгская, грузинская и кавказская кухня в самом центре города — прямо у поющего фонтана.</p>
+              <ul class="feature-list">
+                <li>проект Аркадия Новикова</li>
+                <li>адыгские и кавказские блюда</li>
+                <li>открытая кухня</li>
+                <li>булочная и бургерная рядом</li>
+                <li>вечерний фонтан после ужина</li>
+                <li>цены выше среднего · ₽₽₽</li>
+              </ul>
+              <p class="booking-note"><strong>Бронирование:</strong> условия лучше уточнить по телефону. В часы пик возможна очередь и ожидание свободного столика.</p>
+              <div class="venue-meta"><span>Курортный бульвар, 13А</span><span>+7 928 900-56-42</span></div>
+              <div class="venue-actions">
+                <a class="main-link" href="https://yandex.ru/maps/org/vysota_5642/72934275118/" target="_blank" rel="noopener">Открыть на карте</a>
+                <a class="soft-link" href="tel:+79289005642">Позвонить</a>
+                <a class="soft-link" href="https://vysota-kislovodsk.ru/" target="_blank" rel="noopener">Официальный сайт</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="venue-card">
+            <div class="venue-rank"><strong>05</strong><span>Вкусно и доступно</span></div>
+            <div class="venue-body">
+              <div class="venue-top"><h3>«Старик Хинкалыч»</h3><span class="score">8,9 / 10</span></div>
+              <p class="venue-lead">Удобная хинкальная напротив дачи Шаляпина: хороший вариант для сытного обеда во время прогулки по старому курорту.</p>
+              <ul class="feature-list">
+                <li>несколько видов хинкали</li>
+                <li>хачапури и люля-кебаб</li>
+                <li>быстрая подача</li>
+                <li>удобно по пути от вокзала</li>
+                <li>понятный неформальный формат</li>
+                <li>доступные цены · ₽</li>
+              </ul>
+              <p class="booking-note"><strong>Бронирование:</strong> обычно не требуется. В популярное время возможна плотная посадка.</p>
+              <div class="venue-meta"><span>ул. Шаляпина, 4</span><span>+7 903 444-07-75</span></div>
+              <div class="venue-actions">
+                <a class="main-link" href="https://yandex.ru/maps/org/starik_khinkalych/124322442413/" target="_blank" rel="noopener">Открыть на карте</a>
+                <a class="soft-link" href="tel:+79034440775">Позвонить</a>
+                <a class="soft-link" href="https://xn--80aaf4ahf.xn--p1ai/" target="_blank" rel="noopener">Сайт сети</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="food-note">Рейтинг составлен по совокупности кухни, атмосферы, сервиса, расположения и отзывов гостей. Перед визитом стоит уточнить режим работы, бронь и вечернюю программу.</p>
       </section>
 
       <a class="food-back" href="index.html">← Вернуться на главную</a>
