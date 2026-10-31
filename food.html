@@ -58,7 +58,7 @@
       .venue-actions{flex-direction:column}.venue-actions a{text-align:center}
     }
   </style>
-</head>
+<style>.trip-share{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:26px 0}.trip-share .share-button{background:#e7d5ba;color:#243b32;border:1px solid #d7c4a5}.trip-share-status{font-size:.85rem;color:inherit}.food-hero .trip-share{margin-bottom:0}.trip-share-fallback{width:100%;max-width:560px}.trip-share-fallback input{width:100%;font-size:.9rem}.trip-share-fallback[hidden]{display:none}@media(max-width:560px){.trip-share{align-items:stretch;flex-direction:column}}</style></head>
 <body>
   <header class="topbar">
     <a class="brand" href="index.html" aria-label="Вернуться на главную">
@@ -75,7 +75,7 @@
       </div>
     </section>
 
-    <div class="food-main">
+    <div class="food-main"><div class="trip-share"><button type="button" class="button share-button" data-trip-share>Посмотри, куда мы едем!</button><span class="trip-share-status" role="status" aria-live="polite"></span></div>
       <nav class="food-tabs" aria-label="Категории заведений">
         <a class="food-tab active" href="#event-dinner">Ужин как событие</a>
         <a class="food-tab" href="#caucasus">Кавказская кухня</a>
@@ -952,8 +952,22 @@
         <div class="food-note"><strong>Совет от хозяйки.</strong> Сначала пробуйте, потом покупайте. Сыр попросите упаковать для дороги, у мёда и варенья уточните производителя, а у травяных сборов прочитайте состав. Не всё, что продаётся как «кавказское», сделано именно в Кисловодске — и честная этикетка важнее красивой легенды.</div>
       </section>
 
-            <a class="food-back" href="index.html">← Вернуться на главную</a>
+            <div class="trip-share"><button type="button" class="button share-button" data-trip-share>Посмотри, куда мы едем!</button><span class="trip-share-status" role="status" aria-live="polite"></span></div><a class="food-back" href="index.html">← Вернуться на главную</a>
     </div>
   </main>
-</body>
+<script>
+document.querySelectorAll('[data-trip-share]').forEach(button=>button.addEventListener('click',async()=>{
+const box=button.closest('.trip-share');const status=box.querySelector('.trip-share-status');status.textContent='';
+const url=new URL(location.href);url.search='';url.hash='';
+const isFood=url.pathname.endsWith('food.html');
+const shareData={title:isFood?'Гастрономический Кисловодск':'Кисловодск и Кавминводы в кадре',text:isFood?'Посмотри, куда мы едем! Выбираем, где позавтракать, поужинать и попробовать Кавказ в Кисловодске.':'Посмотри, куда мы едем! Кинопрогулка по Кисловодску и Кавминводам: кадры, истории съёмок и места на карте.',url:url.href};
+if(navigator.share){try{await navigator.share(shareData);return;}catch(error){if(error.name==='AbortError')return;}}
+try{await navigator.clipboard.writeText(shareData.text+' '+shareData.url);status.textContent='Ссылка скопирована — отправьте её близким';}
+catch(error){
+let fallback=box.querySelector('.trip-share-fallback');
+if(!fallback){fallback=document.createElement('label');fallback.className='trip-share-fallback';fallback.textContent='Скопируйте ссылку и отправьте близким';const input=document.createElement('input');input.readOnly=true;input.setAttribute('aria-label','Ссылка для отправки');fallback.append(input);box.append(fallback);}
+const input=fallback.querySelector('input');input.value=shareData.url;input.focus();input.select();status.textContent='Ссылка готова для копирования';
+}
+}));
+</script></body>
 </html>
