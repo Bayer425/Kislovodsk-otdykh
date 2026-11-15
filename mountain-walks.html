@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#243b32">
+  <meta name="description" content="Пеший маршрут из верхней части Кисловодского парка на Малое и Большое Седло. Точка для такси, расстояние и GPX-треки для телефона.">
+  <title>Горные маршруты — Кисловодск</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Prata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20261030-4">
+  <style>
+    .mountain-page { padding-top: 72px }
+    .mountain-page .section { padding-top: 48px; padding-bottom: 64px }
+    .mountain-intro { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(24px, 5vw, 64px); margin-bottom: 32px }
+    .mountain-intro h1 { color: var(--forest); font: 400 clamp(2.3rem, 4.4vw, 4.2rem)/1.15 var(--serif); margin: 0 0 18px }
+    .mountain-intro figure { margin: 0 }
+    .mountain-intro img { width: 100%; height: auto; display: block; border-radius: 24px }
+    .mountain-intro figcaption, .mountain-source { font-size: .85rem; color: var(--muted); margin-top: 8px }
+    .mountain-page a:not(.button) { color: var(--forest); text-underline-offset: .18em }
+    .mountain-facts { display: flex; flex-wrap: wrap; gap: 12px 30px; margin: 24px 0 0 }
+    .mountain-facts dt { color: var(--muted); font-size: .85rem }
+    .mountain-facts dd { margin: 0; color: var(--forest); font-weight: 700 }
+    .mountain-page .walk-card h2 { font-size: clamp(1.5rem, 3vw, 2.1rem) }
+    .mountain-steps { padding-left: 1.4rem; margin: 0 }
+    .mountain-steps li + li { margin-top: 12px }
+    .mountain-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 }
+    .mountain-buttons .button:not(.primary) { border-color: var(--forest); color: var(--forest) }
+    @media (max-width: 720px) {
+      .mountain-intro { grid-template-columns: 1fr }
+      .mountain-page .section { padding-top: 30px }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">К</span><span>Кисловодск</span></a>
+    <a class="top-action" href="walks.html">Городские прогулки</a>
+  </header>
+  <main class="mountain-page">
+    <article class="section" aria-labelledby="sedla-title">
+      <div class="mountain-intro">
+        <div>
+          <p class="eyebrow dark">Горные маршруты</p>
+          <h1 id="sedla-title">Малое и Большое Седло</h1>
+          <p>Пеший маршрут из верхней части Курортного парка на две вершины. В ясную погоду с Большого Седла виден Эльбрус.</p>
+          <dl class="mountain-facts">
+            <div><dt>В одну сторону</dt><dd>около 4,1 км</dd></div>
+            <div><dt>Набор высоты</dt><dd>около 220 м</dd></div>
+            <div><dt>Туда и обратно</dt><dd>около 8 км</dd></div>
+          </dl>
+        </div>
+        <figure>
+          <img src="assets/sedla-elbrus.jpg" alt="Эльбрус над предгорьями, вид от верхней станции канатной дороги" width="1280" height="960">
+          <figcaption>Вид от верхней станции. Фото <a href="https://commons.wikimedia.org/wiki/File:%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%B3%D0%BE%D1%80%D1%83_%D0%AD%D0%BB%D1%8C%D0%B1%D1%80%D1%83%D1%81_%D1%81_%D0%B2%D0%B5%D1%80%D1%85%D0%BD%D0%B5%D0%B9_%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%B8_%D0%BA%D0%B0%D0%BD%D0%B0%D1%82%D0%BD%D0%BE%D0%B9_%D0%B4%D0%BE%D1%80%D0%BE%D0%B3%D0%B8_%D0%9A%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BF%D0%B0%D1%80%D0%BA%D0%B0.jpg">Krimskydan / Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, уменьшено.</figcaption>
+        </figure>
+      </div>
+
+      <section class="walk-card" aria-labelledby="sedla-walk-title">
+        <h2 id="sedla-walk-title">Как пройти</h2>
+        <ol class="mountain-steps">
+          <li><strong>Доезжайте до верхней базы «Юг Спорт».</strong> Она рядом с верхней станцией канатной дороги, от которой начинается полный трек. Можно также подняться на канатке от Храма воздуха. Перед выездом проверьте её режим работы.</li>
+          <li><strong>От верхней станции идите на Малое Седло.</strong> Тропа огибает территорию спорткомплекса, затем некоторое время идёт вдоль асфальтовой дороги. На развилках сверяйтесь с треком. До Малого Седла около 2 км.</li>
+          <li><strong>От Малого Седла продолжайте к Большому.</strong> Спуститесь с вершины по тропе, обогните сосновую рощу и поднимитесь на Большое Седло. Этот участок занимает ещё около 2 км. Обратный путь можно пройти той же тропой.</li>
+        </ol>
+        <div class="mountain-buttons">
+          <a class="button primary" href="https://yandex.ru/maps/org/yug_sport/154490000963/">Точка для такси</a>
+          <a class="button" href="assets/upper-station-to-bolshoe-sedlo.gpx" download>Скачать полный трек GPX</a>
+          <a class="button" href="assets/maloe-sedlo-to-bolshoe-sedlo.gpx" download>Скачать трек между вершинами</a>
+        </div>
+        <p>Откройте GPX в приложении для пешей навигации и заранее скачайте карту района для работы без связи. На гребне ветрено. Возьмите воду, ветровку и обувь с хорошим протектором.</p>
+        <p class="mountain-source"><a href="https://www.russian-kurort.ru/blog/?p=1639">Описание тропы</a> · <a href="https://kispark.ru/">Сайт нацпарка</a> · Треки построены в BRouter по данным <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>.</p>
+      </section>
+    </article>
+  </main>
+  <footer>
+    <div><strong>Квартира для отдыха и перезагрузки</strong><span>Кисловодск, ул. Куйбышева, 79</span></div>
+    <a href="index.html">На главную</a>
+  </footer>
+</body>
+</html>
