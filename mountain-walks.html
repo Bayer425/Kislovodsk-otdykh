@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#243b32">
-  <meta name="description" content="Пеший маршрут из верхней части Кисловодского парка на Малое и Большое Седло. Точка для такси, расстояние и GPX-треки для телефона.">
+  <meta name="description" content="Семь пеших маршрутов для гостей Кисловодска: Малое и Большое Седло, тропа Косыгина, Берёзовское ущелье, Медовые водопады, Бештау и Машук.">
   <title>Горные маршруты — Кисловодск</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,22 +13,27 @@
   <style>
     .mountain-page { padding-top: 72px }
     .mountain-page .section { padding-top: 48px; padding-bottom: 64px }
-    .mountain-intro { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(24px, 5vw, 64px); margin-bottom: 32px }
+    .mountain-intro { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: clamp(24px, 5vw, 64px); margin-bottom: 36px }
     .mountain-intro h1 { color: var(--forest); font: 400 clamp(2.3rem, 4.4vw, 4.2rem)/1.15 var(--serif); margin: 0 0 18px }
     .mountain-intro figure { margin: 0 }
     .mountain-intro img { width: 100%; height: auto; display: block; border-radius: 24px }
-    .mountain-intro figcaption, .mountain-source { font-size: .85rem; color: var(--muted); margin-top: 8px }
+    .mountain-intro figcaption, .mountain-note { font-size: .85rem; color: var(--muted); margin-top: 8px }
     .mountain-page a:not(.button) { color: var(--forest); text-underline-offset: .18em }
-    .mountain-facts { display: flex; flex-wrap: wrap; gap: 12px 30px; margin: 24px 0 0 }
-    .mountain-facts dt { color: var(--muted); font-size: .85rem }
-    .mountain-facts dd { margin: 0; color: var(--forest); font-weight: 700 }
-    .mountain-page .walk-card h2 { font-size: clamp(1.5rem, 3vw, 2.1rem) }
-    .mountain-steps { padding-left: 1.4rem; margin: 0 }
-    .mountain-steps li + li { margin-top: 12px }
-    .mountain-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 }
+    .mountain-jump { display: flex; flex-wrap: wrap; gap: 8px 16px; padding: 0; margin: 18px 0 0; list-style: none }
+    .mountain-jump a { display: inline-flex; align-items: center; min-height: 36px; font-weight: 700 }
+    .mountain-group { margin-top: 36px }
+    .mountain-group h2 { font-size: clamp(1.75rem, 3vw, 2.7rem); margin-bottom: 22px }
+    .mountain-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px }
+    .mountain-grid .walk-card { margin: 0; display: flex; flex-direction: column; scroll-margin-top: 24px }
+    .mountain-grid h3 { color: var(--forest); font: 400 clamp(1.3rem, 2.4vw, 1.9rem)/1.25 var(--serif); margin: 0 0 12px }
+    .mountain-meta { margin: 0 0 12px; font-size: .9rem; font-weight: 700; color: #704f2a }
+    .mountain-grid p + p { margin-top: 0 }
+    .mountain-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 8px }
+    .mountain-buttons .button { white-space: normal; text-align: center }
     .mountain-buttons .button:not(.primary) { border-color: var(--forest); color: var(--forest) }
+    .mountain-notes { margin-top: 32px; max-width: 780px }
     @media (max-width: 720px) {
-      .mountain-intro { grid-template-columns: 1fr }
+      .mountain-intro, .mountain-grid { grid-template-columns: 1fr }
       .mountain-page .section { padding-top: 30px }
     }
   </style>
@@ -39,17 +44,22 @@
     <a class="top-action" href="walks.html">Городские прогулки</a>
   </header>
   <main class="mountain-page">
-    <article class="section" aria-labelledby="sedla-title">
+    <div class="section">
       <div class="mountain-intro">
         <div>
-          <p class="eyebrow dark">Горные маршруты</p>
-          <h1 id="sedla-title">Малое и Большое Седло</h1>
-          <p>Пеший маршрут из верхней части Курортного парка на две вершины. В ясную погоду с Большого Седла виден Эльбрус.</p>
-          <dl class="mountain-facts">
-            <div><dt>В одну сторону</dt><dd>около 4,1 км</dd></div>
-            <div><dt>Набор высоты</dt><dd>около 220 м</dd></div>
-            <div><dt>Туда и обратно</dt><dd>около 8 км</dd></div>
-          </dl>
+          <h1>Горные маршруты</h1>
+          <p>Пешком по Курортному парку, к вершинам и по ущельям. Выберите маршрут, чтобы увидеть, где начать и сколько идти.</p>
+          <nav aria-label="Перейти к маршруту">
+            <ul class="mountain-jump">
+              <li><a href="#maloe-sedlo">Малое Седло</a></li>
+              <li><a href="#bolshoe-sedlo">Большое Седло</a></li>
+              <li><a href="#kosygin">Тропа Косыгина</a></li>
+              <li><a href="#beryozovskoye">Берёзовское ущелье</a></li>
+              <li><a href="#medovye">К Медовым водопадам</a></li>
+              <li><a href="#beshtau">Бештау</a></li>
+              <li><a href="#mashuk">Машук</a></li>
+            </ul>
+          </nav>
         </div>
         <figure>
           <img src="assets/sedla-elbrus.jpg" alt="Эльбрус над предгорьями, вид от верхней станции канатной дороги" width="1280" height="960">
@@ -57,22 +67,91 @@
         </figure>
       </div>
 
-      <section class="walk-card" aria-labelledby="sedla-walk-title">
-        <h2 id="sedla-walk-title">Как пройти</h2>
-        <ol class="mountain-steps">
-          <li><strong>Доезжайте до верхней базы «Юг Спорт».</strong> Она рядом с верхней станцией канатной дороги, от которой начинается полный трек. Можно также подняться на канатке от Храма воздуха. Перед выездом проверьте её режим работы.</li>
-          <li><strong>От верхней станции идите на Малое Седло.</strong> Тропа огибает территорию спорткомплекса, затем некоторое время идёт вдоль асфальтовой дороги. На развилках сверяйтесь с треком. До Малого Седла около 2 км.</li>
-          <li><strong>От Малого Седла продолжайте к Большому.</strong> Спуститесь с вершины по тропе, обогните сосновую рощу и поднимитесь на Большое Седло. Этот участок занимает ещё около 2 км. Обратный путь можно пройти той же тропой.</li>
-        </ol>
-        <div class="mountain-buttons">
-          <a class="button primary" href="https://yandex.ru/maps/org/yug_sport/154490000963/">Точка для такси</a>
-          <a class="button" href="assets/upper-station-to-bolshoe-sedlo.gpx" download>Скачать полный трек GPX</a>
-          <a class="button" href="assets/maloe-sedlo-to-bolshoe-sedlo.gpx" download>Скачать трек между вершинами</a>
+      <section class="mountain-group" aria-labelledby="kislovodsk-routes">
+        <h2 id="kislovodsk-routes">Кисловодск и окрестности</h2>
+        <div class="mountain-grid">
+          <article class="walk-card" id="maloe-sedlo" aria-labelledby="maloe-sedlo-title">
+            <h3 id="maloe-sedlo-title">Малое Седло</h3>
+            <p class="mountain-meta">Около 2 км в одну сторону · Подъём по тропе</p>
+            <p>Для короткого выхода в горы. На такси можно доехать до верхней базы «Юг Спорт» или подняться на канатке от Храма воздуха. Пеший трек начинается у верхней станции.</p>
+            <p>От станции обойдите территорию спорткомплекса, затем пройдите участок вдоль асфальта и сверните на тропу к вершине. Спуститься можно тем же путём.</p>
+            <div class="mountain-buttons">
+              <a class="button primary" href="https://yandex.ru/maps/org/yug_sport/154490000963/">Точка для такси</a>
+              <a class="button" href="assets/upper-station-to-maloe-sedlo.gpx" download>Скачать GPX</a>
+            </div>
+          </article>
+          <article class="walk-card" id="bolshoe-sedlo" aria-labelledby="bolshoe-sedlo-title">
+            <h3 id="bolshoe-sedlo-title">Большое Седло</h3>
+            <p class="mountain-meta">4,1 км в одну сторону от верхней станции · Набор около 220 м</p>
+            <p>От верхней станции идите через Малое Седло. С вершины Малого спуститесь по тропе, обогните сосновую рощу и поднимитесь на Большое. В ясную погоду наверху виден Эльбрус.</p>
+            <p>Между вершинами около 2 км. На возвращение до верхней станции по тому же пути закладывайте ещё 4,1 км.</p>
+            <div class="mountain-buttons">
+              <a class="button primary" href="assets/upper-station-to-bolshoe-sedlo.gpx" download>Скачать весь маршрут GPX</a>
+              <a class="button" href="assets/maloe-sedlo-to-bolshoe-sedlo.gpx" download>GPX между вершинами</a>
+            </div>
+          </article>
+          <article class="walk-card" id="kosygin" aria-labelledby="kosygin-title">
+            <h3 id="kosygin-title">Тропа Косыгина</h3>
+            <p class="mountain-meta">5,9 км от развилки до Малого Седла · 1,5–2 часа в одну сторону</p>
+            <p>В нацпарке она называется «Туристическая тропа». Идите по терренкуру в сторону Красного Солнышка и у станции № 52 сверните на тропу по указателю. По пути — гроты, скала «Человек» и смотровые. Финиш — на Малом Седле.</p>
+            <p>Расстояние дано от развилки. Добавьте путь от входа в парк и заранее выберите, как возвращаться.</p>
+            <div class="mountain-buttons">
+              <a class="button primary" href="https://kispark.ru/routes/turisticheskaya-tropa/">Маршрут на сайте нацпарка</a>
+            </div>
+          </article>
+          <article class="walk-card" id="beryozovskoye" aria-labelledby="beryozovskoye-title">
+            <h3 id="beryozovskoye-title">Берёзовское ущелье</h3>
+            <p class="mountain-meta">Около 12 км в одну сторону до Элькуша · Есть броды</p>
+            <p>Из Кисловодска вдоль реки Берёзовой к селу Элькуш. Тропа проходит под скальными стенами ущелья. На карте маршрута отмечен подход к ущелью, у автора можно скачать GPX.</p>
+            <p>Планируйте обратный транспорт из Элькуша заранее. После сильного дождя или при высокой воде выберите другой маршрут.</p>
+            <div class="mountain-buttons">
+              <a class="button primary" href="https://www.trailstore.ru/catalog/detail/berezovskoje_ushhelje_kislovodska">Карта и GPX у автора</a>
+            </div>
+          </article>
+          <article class="walk-card" id="medovye" aria-labelledby="medovye-title">
+            <h3 id="medovye-title">К Медовым водопадам</h3>
+            <p class="mountain-meta">Около 7,2 км по опубликованному треку · В одну сторону</p>
+            <p>Старт у Замка коварства и любви. Идите вверх по Аликоновскому ущелью вдоль реки до каскада Медовых водопадов. На подход и остановки заложите около трёх часов.</p>
+            <p>Для обратного пути до Кисловодска можно заранее заказать машину к водопадам. Если возвращаетесь пешком, учтите ещё столько же пути.</p>
+            <div class="mountain-buttons">
+              <a class="button primary" href="https://yandex.ru/maps/?text=%D0%97%D0%B0%D0%BC%D0%BE%D0%BA%20%D0%9A%D0%BE%D0%B2%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B0%20%D0%B8%20%D0%9B%D1%8E%D0%B1%D0%B2%D0%B8%20%D0%9A%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D0%BA">Старт на карте</a>
+              <a class="button" href="https://caucasia.ru/site/track/3729">Карта и GPX у автора</a>
+            </div>
+          </article>
         </div>
-        <p>Откройте GPX в приложении для пешей навигации и заранее скачайте карту района для работы без связи. На гребне ветрено. Возьмите воду, ветровку и обувь с хорошим протектором.</p>
-        <p class="mountain-source"><a href="https://www.russian-kurort.ru/blog/?p=1639">Описание тропы</a> · <a href="https://kispark.ru/">Сайт нацпарка</a> · Треки построены в BRouter по данным <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>.</p>
       </section>
-    </article>
+
+      <section class="mountain-group" aria-labelledby="travel-routes">
+        <h2 id="travel-routes">С выездом из Кисловодска</h2>
+        <div class="mountain-grid">
+          <article class="walk-card" id="beshtau" aria-labelledby="beshtau-title">
+            <h3 id="beshtau-title">Бештау</h3>
+            <p class="mountain-meta">Старт в Лермонтове · Горный подъём</p>
+            <p>От остановки «Рассвет» поднимайтесь по улице Космонавта Волкова к кольцевой дороге. Поверните направо, а у балки сверните налево на тропу в лес.</p>
+            <p>На седловине между Малым и Большим Тау поверните направо к главной вершине. Выше леса тропа круче и открыта ветру.</p>
+            <div class="mountain-buttons">
+              <a class="button primary" href="https://www.pyatigorsk.online/todo/leisure/pod_em_na_vershinu_beshtau/">Описание подъёма</a>
+              <a class="button" href="https://yandex.ru/maps/?text=%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%A0%D0%B0%D1%81%D1%81%D0%B2%D0%B5%D1%82%20%D0%9B%D0%B5%D1%80%D0%BC%D0%BE%D0%BD%D1%82%D0%BE%D0%B2%20%D0%A1%D1%82%D0%B0%D0%B2%D1%80%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BA%D1%80%D0%B0%D0%B9">Старт на карте</a>
+            </div>
+          </article>
+          <article class="walk-card" id="mashuk" aria-labelledby="mashuk-title">
+            <h3 id="mashuk-title">Машук</h3>
+            <p class="mountain-meta">Пятигорск · 3,5 км от Солнечных ворот до вершины</p>
+            <p>От Солнечных ворот идите вверх по асфальтовому серпантину. Дорога постепенно набирает высоту и выводит к смотровой площадке на вершине.</p>
+            <p>Можно спуститься тем же путём или на канатке, если она работает.</p>
+            <div class="mountain-buttons">
+              <a class="button primary" href="https://yandex.ru/maps/?text=%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D1%8B%D0%B5%20%D0%B2%D0%BE%D1%80%D0%BE%D1%82%D0%B0%20%D0%9F%D1%8F%D1%82%D0%B8%D0%B3%D0%BE%D1%80%D1%81%D0%BA">Старт на карте</a>
+              <a class="button" href="https://www.pyatigorsk.online/todo/leisure/voshojdenie_na_goru_mashuk/">Описание подъёма</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <aside class="mountain-notes" aria-label="Подготовка к прогулке">
+        <p>Перед выходом скачайте трек и офлайн-карту района. Выбирайте погоду и время так, чтобы вернуться засветло. Для маршрутов от верхней станции можно заранее проверить <a href="https://kispark.ru/">работу канатной дороги на сайте нацпарка</a>.</p>
+        <p class="mountain-note"><a href="https://www.russian-kurort.ru/blog/?p=1639">Описание троп на Сёдла</a>. Треки на Сёдла построены в BRouter по данным <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>.</p>
+      </aside>
+    </div>
   </main>
   <footer>
     <div><strong>Квартира для отдыха и перезагрузки</strong><span>Кисловодск, ул. Куйбышева, 79</span></div>
